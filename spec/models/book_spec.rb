@@ -6,7 +6,7 @@ RSpec.describe Book, type: :model do
       it 'is mandatory' do
         should validate_presence_of(:title)
       end
-      it 'is 100 characters at most' do
+      it 'has 100 characters at most' do
         should validate_length_of(:title).is_at_most(100)
       end
     end
