@@ -66,6 +66,7 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing' # If you are using Rails 5.x
   # Easy installation and use of chromedriver to run system tests with Chrome
 end
 
