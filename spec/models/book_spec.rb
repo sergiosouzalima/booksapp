@@ -21,4 +21,10 @@ RSpec.describe Book, type: :model do
       end
     end
   end
+
+  context 'when validating associations' do
+    it 'has and belongs to many categories' do
+      should have_and_belong_to_many(:categories)
+    end
+  end
 end
