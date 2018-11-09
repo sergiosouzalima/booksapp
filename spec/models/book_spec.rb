@@ -26,5 +26,8 @@ RSpec.describe Book, type: :model do
     it 'has and belongs to many categories' do
       should have_and_belong_to_many(:categories)
     end
+    it 'has many likes' do
+      should have_many(:likes)
+    end
   end
 end

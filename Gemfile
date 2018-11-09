@@ -40,6 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'rails_best_practices'
 gem 'rubocop', require: false
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +48,8 @@ group :development, :test do
   gem 'factory_bot'
   gem 'faker'
   gem 'pry-rails'
+  gem 'pry-rescue'
+  gem 'pry-nav'
   gem 'rspec-rails'
 end
 

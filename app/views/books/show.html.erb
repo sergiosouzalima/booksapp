@@ -15,6 +15,10 @@
   <%= @book.text %>
 </p>
 
+<div id="book_<%= @book.id %>_likes">
+  <%= render partial: "likes", locals: {book: @book} %>
+</div>
+
 <h2>Categories</h2>
 <ul>
   <% for category in @book.categories %>
