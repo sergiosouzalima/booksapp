@@ -16,6 +16,11 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :likes %>
+    <%= form.text_field :likes, disabled: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

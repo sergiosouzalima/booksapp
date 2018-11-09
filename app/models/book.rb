@@ -16,5 +16,11 @@ class Book < ApplicationRecord
   validates :text, presence: true
 
   has_and_belongs_to_many :categories
-  has_many :likes
+  has_many :likes, dependent: :destroy
+
+  scope :by_title, -> { order(title: :asc) }
+
+  def likes_count
+    likes.count
+  end
 end

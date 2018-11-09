@@ -9,5 +9,13 @@
 #
 
 class Like < ApplicationRecord
+  after_create_commit :add_likes_to_category
+
   belongs_to :book
+
+  def add_likes_to_category
+    self.book.categories.each do |e|
+      Category.find(e.id).update(likes: e.likes + 1)
+    end
+  end
 end

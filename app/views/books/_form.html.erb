@@ -29,7 +29,7 @@
   <div class="field">
     <h2>Categories</h2>
     <ol>
-      <%= collection_check_boxes :book, :category_ids, @categories, :id, :name do |builder| %>
+      <%= collection_check_boxes :book, :category_ids, Category.all, :id, :name do |builder| %>
         <li>
           <%= builder.label { builder.check_box + builder.text } %>
         </li>

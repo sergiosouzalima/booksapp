@@ -26,8 +26,14 @@ RSpec.describe Book, type: :model do
     it 'has and belongs to many categories' do
       should have_and_belong_to_many(:categories)
     end
-    it 'has many likes' do
-      should have_many(:likes)
+    it 'has many likes, destroy dependents' do
+      should have_many(:likes).dependent(:destroy)
+    end
+  end
+
+  context 'when validating ordering by' do
+    it 'orders by title' do
+      should scope_by_title
     end
   end
 end
