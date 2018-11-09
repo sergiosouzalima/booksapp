@@ -31,9 +31,21 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  context 'when validating ordering by' do
-    it 'orders by title' do
-      should scope_by_title
+  context 'when validating specific methods' do
+    describe "#likes_count" do
+      before do
+        book_attributes = { title: Faker::Book.title,
+                            published_at: Faker::Date.backward(10),
+                            text: Faker::Lorem.paragraph
+        }
+        book = Book.create(book_attributes)
+        Like.create book_id: book.id
+      end
+      subject{ Book.first.likes_count }
+      let(:book_likes){ Book.first.likes.count }
+      it 'returns number of likes correctly' do
+        expect(subject).to eql(book_likes)
+      end
     end
   end
 end

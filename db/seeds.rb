@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 9.times do
-  Category.where( name: Faker::Book.genre ).first_or_create
+  Category.where( name: Faker::Book.genre.truncate(15) ).first_or_create
 end
 
 50.times do
